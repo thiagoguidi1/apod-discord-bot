@@ -18,8 +18,14 @@ for (const file of commandFiles) {
     commands.push(command.data.toJSON());
 }
 //REST instancia
-const rest = new REST({version: '10'}).setToken(TOKEN);
+const rest = new REST().setToken(TOKEN);
 
+    //Deletar comando
+    // rest.delete(Routes.applicationCommand(CLIENT_ID, 'AQUIvaiOidDOcomando'))
+    //     .then(() => console.log('Successfully deleted application command'))
+    //     .catch(console.error);
+
+console.log('deploy-commands inicializado');
 //deploy
 (async () => {
     try {
@@ -33,4 +39,4 @@ const rest = new REST({version: '10'}).setToken(TOKEN);
     catch (error) {
         console.error(error)
     }
-})()
+})();

@@ -1,5 +1,5 @@
 const { Client, Events, GatewayIntentBits, Collection } = require('discord.js');
-
+const startupDeploy = require('./deploy-commands');
 //dotenv
 const dotenv = require('dotenv');
 dotenv.config();
@@ -26,8 +26,6 @@ for (const file of commandFiles) {
         console.log(`Esse comando em  ${filePath} está ausente.`)
     }
 }
-// console.log(client.commands)
-//Puxar API dao 
 
 //Login do Bot
 client.once(Events.ClientReady, c => {
